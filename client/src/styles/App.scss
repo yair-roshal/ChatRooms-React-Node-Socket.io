@@ -1,0 +1,270 @@
+:root {
+    --primaryColor: #af9a7d;
+    --mainBlack: #222;
+    --darkGrey: #cfcfcf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 3px;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+
+    --dark-color-a: #667aff;
+    --dark-color-b: #7386ff;
+    --light-color: #e6e9ff;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+$backgroundHeader: #2c2c2c;
+$white: #ffffff;
+$mainBlack: #222;
+
+body {
+    padding-top: 66px;
+    color: var(--mainBlack);
+    background: $white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.4;
+}
+
+.title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.wrapperButton {
+    padding: 35px 0;
+
+    .button {
+        border-radius: 4px;
+        background-color: $backgroundHeader;
+        border: none;
+        color: $white;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button:active,
+    :focus {
+        border: 3px solid rgb(28, 123, 163);
+    }
+
+    .button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    color: var(--mainBlack);
+    background: var(--primaryColor);
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--primaryColor);
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-primary:hover {
+    background: transparent;
+    color: var(--primaryColor);
+    text-align: center;
+}
+.btn-send {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    color: var(--mainBlack);
+    background: var(--dark-color-a);
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--dark-color-b);
+    border-radius: 3px;
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn-send:hover {
+    background: transparent;
+    color: var(--dark-color-b);
+}
+.loading {
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 3rem;
+}
+.error {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+.empty-search {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+    padding: 1rem;
+    letter-spacing: var(--mainSpacing);
+}
+/* end of globals */
+
+/* roomsList */
+.roomsList {
+    padding: 2rem 0;
+}
+.roomsList-center {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 30px;
+}
+
+@media screen and (min-width: 776px) {
+    .roomsList-center {
+        width: 90vw;
+    }
+}
+@media screen and (min-width: 992px) {
+    .roomsList-center {
+        width: 95vw;
+        max-width: 1170px;
+    }
+}
+/* end of roomsList */
+
+/* room */
+.room {
+    box-shadow: var(--lightShadow);
+    transition: var(--mainTransition);
+}
+.room:hover {
+    box-shadow: var(--darkShadow);
+}
+
+.img-container {
+    position: relative;
+}
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: var(--mainTransition);
+}
+.img-container2 {
+    position: relative;
+}
+.img-container2 img {
+    width: 100%;
+    display: block;
+}
+
+.room-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(0);
+    transition: all 0.3s linear;
+}
+.img-container:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.img-container:hover img {
+    opacity: 0.3;
+}
+
+.img-container:hover .room-link {
+    transform: translate(-50%, -50%) scale(1);
+}
+.room-title {
+    background: var(--darkGrey);
+    text-transform: capitalize;
+    padding: 0.5rem 0.5rem;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: var(--mainSpacing);
+}
+
+.room-description {
+    background: var(--darkGrey);
+    padding: 0.2rem 0.5rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+/* end of room  */
+
+/* start of join-main  */
+.join-main {
+    padding: 30px 40px;
+    background: var(--dark-color-b);
+}
+
+.join-main .form-control {
+    margin-bottom: 20px;
+}
+
+.join-main label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+/* end of join-main  */
+
+.wrapper {
+    display: flex;
+}
+.column-1 {
+    margin: 2rem;
+}
+
+.inputInner {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-right: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputInner:focus {
+    background-color: lightblue;
+}

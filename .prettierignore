@@ -1,0 +1,10 @@
+backup
+node_modules
+logs
+run
+coverage
+build 
+
+**/.git
+**/.svn
+**/.hg

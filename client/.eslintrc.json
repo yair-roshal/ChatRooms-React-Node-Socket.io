@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended"
+
+        // "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "no-var": "error",
+        "no-mixed-spaces-and-tabs": "off",
+
+        "semi": "off",
+        "no-multi-spaces": "warn",
+        "space-in-parens": "warn",
+        "no-multiple-empty-lines": "warn",
+        "prefer-const": "warn",
+        "no-use-before-define": "error",
+        "no-extra-boolean-cast": 1,
+        "new-parens": 1,
+        "react/prop-types": "off",
+        "no-unused-vars": "warn",
+        "import/no-unresolved": "off"
+    }
+}
